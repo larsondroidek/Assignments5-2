@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Practice page for CSS selectors: element, class, ID, universal, grouping, cascade and specificity." />
+    <title>CSS Selectors Practice</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>CSS Selectors Practice</h1>
+      <p>A page showing how different selectors style HTML elements.</p>
+    </header>
+
+    <main>
+      <!-- Cards styled with a CLASS selector -->
+      <section class="card">
+        <h2>Element Selector</h2>
+        <p>Headings and paragraphs on this page are styled by their tag names.</p>
+      </section>
+
+      <section class="card">
+        <h2>Class Selector</h2>
+        <p>These cards all share the class <code>card</code>, so one rule styles every card.</p>
+      </section>
+
+      <section class="card">
+        <h2>Grouping Selector</h2>
+        <p>The <code>h1, h2, h3</code> headings share one font family through a single grouped rule.</p>
+      </section>
+
+      <!-- Section styled with an ID selector -->
+      <section id="featured" class="card">
+        <h2>ID Selector</h2>
+        <p>This section has the id <code>featured</code>, so it gets its own special style.</p>
+      </section>
+
+      <!-- Cascade and specificity demonstration -->
+      <section class="card" id="conflict-demo">
+        <h2>Cascade and Specificity</h2>
+        <p class="highlight">This paragraph is targeted by several conflicting rules. Its color shows which rule wins.</p>
+        <p class="highlight" id="special">This paragraph has a class and an id, so the ID rule wins.</p>
+        <p>
+          The first paragraph is green because the later <code>.highlight</code> rule
+          overrides the earlier one (same specificity: the last rule wins), and
+          <code>.highlight</code> beats the element selector <code>p</code>.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p><small>&copy; 2026 CSS Practice</small></p>
+    </footer>
+  </body>
+</html>

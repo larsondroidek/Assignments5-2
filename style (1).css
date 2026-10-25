@@ -1,0 +1,90 @@
+/* 1. UNIVERSAL selector: reset margin/padding and use border-box sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ELEMENT selector: styles every <body>, <p>, <code> */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f4f6;
+  color: #1f2937;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+p {
+  color: #374151;
+  margin: 10px 0;
+}
+
+code {
+  background-color: #e5e7eb;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* GROUPING selector: one rule for several selectors */
+h1,
+h2,
+h3 {
+  font-family: Georgia, serif;
+  color: #1e3a8a;
+}
+
+/* ELEMENT selector for individual headings */
+h1 {
+  font-size: 2.2rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+header,
+footer {
+  text-align: center;
+  padding: 16px 0;
+}
+
+/* 2. CLASS selector: styles all elements with class="card" */
+.card {
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin: 16px 0;
+}
+
+/* 3. ID selector: styles only the element with id="featured" */
+#featured {
+  background-color: #fef3c7;
+  border: 2px solid #f59e0b;
+}
+
+/* 4. CONFLICTING RULES — cascade and specificity */
+
+/* Rule A: element selector (specificity 0,0,1) */
+p {
+  color: #374151; /* gray */
+}
+
+/* Rule B: class selector (specificity 0,1,0) — beats the element selector */
+.highlight {
+  color: red;
+}
+
+/* Rule C: same specificity as Rule B but written later — the LAST rule wins */
+.highlight {
+  color: green;
+}
+
+/* Rule D: ID selector (specificity 1,0,0) — beats all class/element rules, whatever the order */
+#special {
+  color: blue;
+  font-weight: bold;
+}
